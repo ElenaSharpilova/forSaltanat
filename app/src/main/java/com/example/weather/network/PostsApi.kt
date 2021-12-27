@@ -1,18 +1,18 @@
-package models
+package com.example.weather.network
 
+import com.example.weather.models.Post
 import retrofit2.Call
 import retrofit2.http.*
 
 interface PostsApi {
-
     @GET("posts/{id}")
     fun fetchPostById(
-        @Path("id") id: Int
+        @Path("id") id : Int
     ): Call<Post>
 
     @POST("posts")
     fun createPost(
-        @Body post: Post
+        @Body post : Post
     ): Call<Post>
 
     @POST("posts")
@@ -26,23 +26,21 @@ interface PostsApi {
     @POST("posts")
     @FormUrlEncoded
     fun createPostUsingFieldMap(
-        @FieldMap map: Map<String,String>
+        @FieldMap map: Map<String, String>
     ): Call<Post>
-
 
     @PUT("posts/{id}")
     fun putPost(
         @Path("id") id: String,
         @Body post: Post
-    ): Call<Post>
+    ) : Call<Post>
 
     @PATCH("posts/{id}")
     fun patchPost(
         @Path("id") id: String,
         @Body post: Post
-    ): Call<Post>
+    ) : Call<Post>
 
     @DELETE("posts/{id}")
-    fun deletePost(@Path("id") id: String): Call<Unit>
-
+    fun deletePost(@Path("id") id: String) : Call<Unit>
 }

@@ -1,4 +1,6 @@
-import com.example.weather.ForeCast
+package com.example.weather.network
+
+import com.example.weather.models.ForeCast
 import io.reactivex.Single
 
 import retrofit2.http.GET
@@ -16,6 +18,4 @@ interface WeatherApi {
         @Query("units") units: String = "metric"
 
     ): Single<ForeCast>
-
-
 }

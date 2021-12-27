@@ -1,6 +1,6 @@
-package models
+package com.example.weather.models
 
-data class Comment(
+class Comment (
     var userId: Int? = null,
     var id: Int? = null,
     var name: String? = null,

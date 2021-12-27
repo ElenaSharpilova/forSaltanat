@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.constraintlayout.motion.widget.MotionLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -9,8 +8,7 @@
     android:background="@color/mild_blue"
     android:fitsSystemWindows="false"
     app:layoutDescription="@xml/motion"
-    tools:context=".ui.MainActivity">
-
+    tools:context=".MainActivity">
 
     <ProgressBar
         android:id="@+id/progress"
@@ -22,10 +20,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4"
-        tools:visibility="visible" />
-
-
+        app:layout_constraintVertical_bias="0.4" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_container"
@@ -38,34 +33,34 @@
 
         <TextView
             android:id="@+id/tv_temperature"
-            style="@style/Animation.Design.BottomSheetDialog"
+            style="@style/ExtraLargeWhiteTextWithIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_weather_icon"
             app:layout_constraintTop_toBottomOf="@+id/tv_city"
-            tools:text="20" />
+            tools:text="20"/>
 
         <ImageView
             android:id="@+id/iv_weather_icon"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginEnd="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_temperature"
+            app:layout_constraintBottom_toBottomOf="@id/tv_temperature"
             app:layout_constraintEnd_toStartOf="@+id/tv_temperature"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tv_temperature"
-            app:srcCompat="@drawable/ic_launcher_foreground" />
+            app:layout_constraintTop_toTopOf="@id/tv_temperature"
+            app:srcCompat="@drawable/ic_launcher_foreground"/>
 
         <TextView
             android:id="@+id/tv_city"
-            style="@style/TextAppearance.AppCompat.Medium"
+            style="@style/WhiteMediumText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:text="Bishkek"
+            android:text="@string/bishkek"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -73,103 +68,104 @@
 
         <TextView
             android:id="@+id/tv_date"
-            style="@style/TextAppearance.AppCompat.Medium"
+            style="@style/GreySmallText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_city"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/tv_city"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_city"
-            tools:text="06.09.2020" />
+            app:layout_constraintTop_toBottomOf="@id/tv_city"
+            tools:text="05.07.2021"
+            />
 
         <TextView
             android:id="@+id/tv_temp_max"
-            style="@style/WhiteMediumlargeTextWithIcon"
+            style="@style/WhiteMediumLargeTextWithIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:padding="0dp"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/tv_divider"
             app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_temperature"
-            tools:text="20/19" />
+            app:layout_constraintTop_toBottomOf="@id/tv_temperature"
+            tools:text="20/19"/>
 
         <TextView
             android:id="@+id/tv_feels_like"
-            style="@style/WhiteMediumlargeTextWithIcon"
+            style="WhiteMediumLargeTextWithIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:padding="0dp"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_temp_max"
+            app:layout_constraintBottom_toBottomOf="@id/tv_temp_max"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/tv_temp_min"
-            app:layout_constraintTop_toTopOf="@+id/tv_temp_max"
-            tools:text="чувствуется как " />
+            app:layout_constraintTop_toTopOf="@id/tv_temp_max"
+            android:text="@string/feels_like"
+            android:textColor="@color/white"/>
+
 
         <TextView
             android:id="@+id/tv_weather"
-            style="@style/WhiteMediumlargeTextWithIcon"
+            style="@style/WhiteMediumText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:paddingBottom="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_temp_max"
-            tools:text="cloudy" />
+            app:layout_constraintTop_toBottomOf="@id/tv_temp_max"
+            tools:text="cloudy"/>
 
         <TextView
             android:id="@+id/tv_divider"
-            style="@style/WhiteMediumlargeTextWithIcon"
+            style="@style/WhiteText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="/"
             android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_temp_max"
+            app:layout_constraintBottom_toBottomOf="@id/tv_temp_max"
             app:layout_constraintEnd_toStartOf="@+id/tv_temp_min"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/tv_temp_max"
-            app:layout_constraintTop_toTopOf="@+id/tv_temp_max" />
+            app:layout_constraintStart_toEndOf="@id/tv_temp_max"
+            app:layout_constraintTop_toTopOf="@id/tv_temp_max"/>
 
         <TextView
             android:id="@+id/tv_temp_min"
-            style="@style/WhiteMediumlargeTextWithIcon"
+            style="@style/WhiteMediumLargeTextWithIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="0dp"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_temp_max"
+            app:layout_constraintBottom_toBottomOf="@id/tv_temp_max"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/tv_feels_like"
-            app:layout_constraintStart_toEndOf="@+id/tv_divider"
-            app:layout_constraintTop_toTopOf="@+id/tv_temp_max" />
+            app:layout_constraintEnd_toStartOf="@id/tv_feels_like"
+            app:layout_constraintStart_toEndOf="@id/tv_divider"
+            app:layout_constraintTop_toTopOf="@id/tv_temp_max"/>
 
         <TextView
             android:id="@+id/tv_refresh"
-            style="@style/WhiteMediumlargeTextWithIcon"
+            style="@style/WhiteSmallText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:clickable="true"
-            android:foreground="?selectableItemBackground"
-            android:text="Refresh"
+            android:foreground="?android:selectableItemBackground"
+            android:text="@string/refresh"
             android:textColor="@color/light_green"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tv_weather"
-            android:focusable="true" />
+            app:layout_constraintTop_toTopOf="@id/tv_weather"
+            android:focusable="true"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nsv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cl_container">
@@ -178,7 +174,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView"
@@ -195,7 +190,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_margin="16dp"
                     android:orientation="horizontal"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -215,11 +210,12 @@
                     android:layout_gravity="center_vertical"
                     android:layout_margin="16dp"
                     android:orientation="horizontal"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cardView3"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:layout_marginTop="16dp"
@@ -235,22 +231,22 @@
 
                     <TextView
                         android:id="@+id/tv_sunrise_label"
-                        style="@style/WhiteMediumlargeTextWithIcon"
+                        style="@style/WhiteMediumText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
-                        android:text="Sunrise"
+                        android:text="@string/sunrise"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"/>
 
                     <TextView
-                        android:id="@+id/tv_sunsrise"
-                        style="@style/WhiteMediumlargeTextWithIcon"
+                        android:id="@+id/tv_sunrise"
+                        style="@style/WhiteMediumText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="16dp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"/>
 
                     <View
                         android:id="@+id/divider1"
@@ -262,28 +258,28 @@
                         android:background="@color/grey"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tv_sunrise_label" />
+                        app:layout_constraintTop_toBottomOf="@id/tv_sunrise_label"/>
 
                     <TextView
                         android:id="@+id/tv_sunset_label"
-                        style="@style/WhiteMediumlargeTextWithIcon"
+                        style="@style/WhiteMediumText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="24dp"
-                        android:text="Sunset"
+                        android:text="@string/sunset"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/divider1" />
+                        app:layout_constraintTop_toBottomOf="@id/divider1"/>
 
                     <TextView
                         android:id="@+id/tv_sunset"
-                        style="@style/WhiteMediumlargeTextWithIcon"
+                        style="@style/WhiteMediumText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="24dp"
                         android:layout_marginEnd="16dp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/divider1" />
+                        app:layout_constraintTop_toBottomOf="@id/divider1"/>
 
                     <View
                         android:id="@+id/divider2"
@@ -295,33 +291,31 @@
                         android:background="@color/grey"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tv_sunset_label" />
+                        app:layout_constraintTop_toBottomOf="@id/tv_sunset_label"/>
 
                     <TextView
                         android:id="@+id/tv_humidity_label"
-                        style="@style/WhiteMediumlargeTextWithIcon"
+                        style="@style/WhiteMediumText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="24dp"
-                        android:text="Humidity"
+                        android:text="@string/humidity"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/divider2" />
+                        app:layout_constraintTop_toBottomOf="@id/divider2"/>
 
                     <TextView
                         android:id="@+id/tv_humidity"
-                        style="@style/WhiteMediumlargeTextWithIcon"
+                        style="@style/WhiteMediumText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="24dp"
                         android:layout_marginEnd="16dp"
+                        android:layout_marginTop="24dp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/divider2" />
+                        app:layout_constraintTop_toBottomOf="@id/divider2"/>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
-
             </androidx.cardview.widget.CardView>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
-
 </androidx.constraintlayout.motion.widget.MotionLayout>

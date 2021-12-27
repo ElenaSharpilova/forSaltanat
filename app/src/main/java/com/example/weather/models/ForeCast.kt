@@ -1,4 +1,4 @@
-package com.example.weather
+package com.example.weather.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -25,11 +25,11 @@ data class CurrentForeCast(
     var temp: Double? = null,
     var feels_like: Double? = null,
     var humidity: Int? = null,
-    var weather: List<Weather>? = null
+    var weather: List<Weather>
 )
 
 data class Weather(
-    var id: Long? = null,
+    var id : Long? = null,
     var description: String? = null,
     var icon: String? = null
 )
@@ -53,6 +53,6 @@ data class DailyForeCast(
 )
 
 data class Temperature(
-    var min: Double? = null,
-    var max: Double? = null
+    var max: Double? = null,
+    var min: Double? = null
 )
